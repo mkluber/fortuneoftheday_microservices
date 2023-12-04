@@ -10,6 +10,6 @@ function ScanFortune() {
     .then(response => response.json())
     .then(json => {
       console.log(json);
-      document.getElementById("demo").innerHTML = JSON.stringify(json);
+      document.getElementById("ScanFortuneOutput").innerHTML = JSON.stringify(json);
     });
 }
