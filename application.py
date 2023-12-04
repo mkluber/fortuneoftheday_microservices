@@ -5,7 +5,7 @@ from flask_cors import CORS
 
 application = Flask(__name__)
 api = Api(application)
-CORS(application, origins=["http://static.outworldindustries.com"])
+CORS(application, origins=["https://static.outworldindustries.com"])
 
 dynamodb = boto3.resource('dynamodb', region_name='eu-central-1')
 table = dynamodb.Table('Fortunes')
