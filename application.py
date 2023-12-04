@@ -28,7 +28,7 @@ class ReadFortune(Resource):
             }
         )
         item = response['Item']
-        print(item)
+        return jsonify(item)
 
 class AddFortune(Resource):
     def post(self):
