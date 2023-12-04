@@ -72,11 +72,11 @@ class DeleteFortune(Resource):
             }
         )
 
-api.add_resource(ScanFortune, '/')
-api.add_resource(ReadFortune, '/readfortune')
-api.add_resource(AddFortune, '/addfortune')
-api.add_resource(UpdateFortune, '/readfortune')
-api.add_resource(DeleteFortune, '/deletefortune')
+api.add_resource(ScanFortune, '/scanfortune/')
+api.add_resource(ReadFortune, '/readfortune/')
+api.add_resource(AddFortune, '/addfortune/')
+api.add_resource(UpdateFortune, '/readfortune/')
+api.add_resource(DeleteFortune, '/deletefortune/')
 
 if __name__ == '__main__':
     application.run(debug=True)

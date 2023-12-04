@@ -5,7 +5,7 @@ function myFunction() {
 myFunction();
 
 function ScanFortune() {
-  const url = 'https://api.outworldindustries.com/';
+  const url = 'https://api.outworldindustries.com/scanfortune/';
   fetch(url)
     .then(response => response.json())
     .then(json => {
