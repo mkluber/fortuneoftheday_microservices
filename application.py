@@ -1,5 +1,5 @@
 import boto3
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from flask_restful import Resource, Api
 from flask_cors import CORS
 
@@ -15,6 +15,7 @@ class ScanFortune(Resource):
         response = table.scan()
         items = response['Items']
         print(items)
+        return jsonify(items)
 
 class ReadFortune(Resource):
     def get(self):
