@@ -19,8 +19,8 @@
           </form>
           
           <form action="/scanfortune/" method="get">
-            <button name="scanfortunebutton" type="submit">Scan The Fortune!</button>
-            <p>{{ fortunes }}</p>
+            <button name="scanfortunebutton" type="submit" onclick="ScanFortune()">Scan The Fortune!</button>
+            <p id="ScanFortuneOutput"></p>
           </form>
           
           <form action='/readfortune/' method="post">

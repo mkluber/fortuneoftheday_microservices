@@ -3,3 +3,13 @@ function myFunction() {
   }
   
   myFunction();
+
+function ScanFortune() {
+  const url = 'https://api.outworldindustries.com/';
+  fetch(url)
+    .then(response => response.json())
+    .then(json => {
+      console.log(json);
+      document.getElementById("demo").innerHTML = JSON.stringify(json);
+    });
+}
