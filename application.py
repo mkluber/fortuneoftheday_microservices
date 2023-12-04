@@ -1,6 +1,6 @@
 import boto3
-import random
-from flask import Flask, render_template, Response, request, redirect, url_for
+from flask import Flask
+from flask_restful import Resource, Api
 
 application = Flask(__name__)
 
