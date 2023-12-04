@@ -2,7 +2,7 @@ function myFunction() {
     console.log('Hello world!');
   }
   
-  myFunction();
+myFunction();
 
 function ScanFortune() {
   const url = 'https://api.outworldindustries.com/';
