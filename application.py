@@ -1,9 +1,11 @@
 import boto3
 from flask import Flask, request
 from flask_restful import Resource, Api
+from flask_cors import CORS
 
 application = Flask(__name__)
 api = Api(application)
+CORS(application, origins=["http://static.outworldindustries.com"])
 
 dynamodb = boto3.resource('dynamodb', region_name='eu-central-1')
 table = dynamodb.Table('Fortunes')
