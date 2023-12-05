@@ -40,6 +40,7 @@ function ReadFortune() {
     .then(response => response.json())
     .then(data => console.log(data))
     .catch(error => console.error(error));
+    document.getElementById("ReadFortuneOutput").innerHTML = JSON.stringify(json);
 }
 
 function UpdateFortune() {
