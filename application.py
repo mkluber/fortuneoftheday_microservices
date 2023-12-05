@@ -10,6 +10,12 @@ CORS(application, origins=["https://static.outworldindustries.com"])
 dynamodb = boto3.resource('dynamodb', region_name='eu-central-1')
 table = dynamodb.Table('Fortunes')
 
+class HelloWorld(Resource):
+    def get(self):
+        return {'hello': 'world'}
+
+api.add_resource(HelloWorld, '/')
+
 class ScanFortune(Resource):
     def get(self):
         response = table.scan()
@@ -75,7 +81,8 @@ class DeleteFortune(Resource):
             }
         )
 
-api.add_resource(ScanFortune, '/scanfortune/')      # CREATE a "/" ENTRY POINT AS WELL
+api.add_resource(HelloWorld, '/')
+api.add_resource(ScanFortune, '/scanfortune/')
 api.add_resource(ReadFortune, '/readfortune/')
 api.add_resource(AddFortune, '/addfortune/')
 api.add_resource(UpdateFortune, '/updatefortune/')

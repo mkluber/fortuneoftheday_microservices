@@ -33,7 +33,6 @@ function ReadFortune() {
   const formData = new FormData(FortuneInfo);
   const response = fetch("https://api.outworldindustries.com/readfortune/", {
     method: "GET",
-    body: formData,
   });
   console.log(response);
 }
