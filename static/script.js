@@ -23,5 +23,17 @@ function AddFortune() {
     method: "POST",
     body: formData,
   });
-  console.log(response.json());
+  console.log(response);
+}
+
+
+function ReadFortune() {
+  // A <form> element
+  const FortuneInfo = document.querySelector("#ReadFortuneForm");
+  const formData = new FormData(FortuneInfo);
+  const response = fetch("https://api.outworldindustries.com/readfortune/", {
+    method: "POST",
+    body: formData,
+  });
+  console.log(response);
 }
