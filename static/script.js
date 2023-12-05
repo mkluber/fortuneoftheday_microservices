@@ -5,7 +5,7 @@ function myFunction() {
 myFunction();
 
 function ScanFortune() {
-  const url = 'https://api.outworldindustries.com/scanfortune/';
+  const url = 'https://api.outworldindustries.com/scanfortune';
   fetch(url)
     .then(response => response.json())
     .then(json => {
@@ -19,7 +19,7 @@ function AddFortune() {
   // A <form> element
   const FortuneInfo = document.querySelector("#AddFortuneForm");
   const formData = new FormData(FortuneInfo);
-  const response = fetch("https://api.outworldindustries.com/addfortune/", {
+  const response = fetch("https://api.outworldindustries.com/addfortune", {
     method: "POST",
     body: formData,
   });
@@ -28,20 +28,25 @@ function AddFortune() {
 
 
 function ReadFortune() {
-  // A <form> element
-  const FortuneInfo = document.querySelector("#ReadFortuneForm");
-  const formData = new FormData(FortuneInfo);
-  const response = fetch("https://api.outworldindustries.com/readfortune/", {
-    method: "GET",
-  });
-  console.log(response);
+  const readfortune = document.getElementById("readfortune").value;
+  const readorigin = document.getElementById("readorigin").value;
+  const url = `https://api.outworldindustries.com/readfortune?readfortune=${readfortune}&readorigin=${readorigin}`;
+  fetch(url, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    }
+  })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error(error));
 }
 
 function UpdateFortune() {
   // A <form> element
   const FortuneInfo = document.querySelector("#UpdateFortuneForm");
   const formData = new FormData(FortuneInfo);
-  const response = fetch("https://api.outworldindustries.com/updatefortune/", {
+  const response = fetch("https://api.outworldindustries.com/updatefortune", {
     method: "POST",
     body: formData,
   });
@@ -52,7 +57,7 @@ function DeleteFortune() {
   // A <form> element
   const FortuneInfo = document.querySelector("#DeleteFortuneForm");
   const formData = new FormData(FortuneInfo);
-  const response = fetch("https://api.outworldindustries.com/deletefortune/", {
+  const response = fetch("https://api.outworldindustries.com/deletefortune", {
     method: "POST",
     body: formData,
   });

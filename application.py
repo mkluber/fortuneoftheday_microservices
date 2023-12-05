@@ -23,8 +23,8 @@ class ScanFortune(Resource):
 
 class ReadFortune(Resource):
     def get(self):
-        fortune_key = request.form['readfortune']
-        origin_key = request.form['readorigin']
+        fortune_key = request.args.get('readfortune')
+        origin_key = request.args.get('readorigin')
         response = table.get_item(
             Key={
                 'FortuneName': fortune_key,
@@ -80,11 +80,11 @@ class DeleteFortune(Resource):
         )
 
 api.add_resource(HelloWorld, '/')
-api.add_resource(ScanFortune, '/scanfortune/')
-api.add_resource(ReadFortune, '/readfortune/')
-api.add_resource(AddFortune, '/addfortune/')
-api.add_resource(UpdateFortune, '/updatefortune/')
-api.add_resource(DeleteFortune, '/deletefortune/')
+api.add_resource(ScanFortune, '/scanfortune')
+api.add_resource(ReadFortune, '/readfortune')
+api.add_resource(AddFortune, '/addfortune')
+api.add_resource(UpdateFortune, '/updatefortune')
+api.add_resource(DeleteFortune, '/deletefortune')
 
 if __name__ == '__main__':
     application.run(debug=True)
