@@ -31,16 +31,12 @@ function ReadFortune() {
   const readfortune = document.getElementById("readfortune").value;
   const readorigin = document.getElementById("readorigin").value;
   const url = `https://api.outworldindustries.com/readfortune?readfortune=${readfortune}&readorigin=${readorigin}`;
-  fetch(url, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded'
-    }
-  })
+  fetch(url)
     .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.error(error));
-    document.getElementById("ReadFortuneOutput").innerHTML = JSON.stringify(json);
+    .then(json => {
+      console.log(json);
+      document.getElementById("ReadFortuneOutput").innerHTML = JSON.stringify(json);
+    });
 }
 
 function UpdateFortune() {
