@@ -31,7 +31,12 @@ function ReadFortune() {
   const readfortune = document.getElementById("readfortune").value;
   const readorigin = document.getElementById("readorigin").value;
   const url = `https://api.outworldindustries.com/readfortune?readfortune=${readfortune}&readorigin=${readorigin}`;
-  fetch(url)
+  fetch(url, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    }
+  })
     .then(response => response.json())
     .then(json => {
       console.log(json);
