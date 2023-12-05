@@ -87,4 +87,4 @@ api.add_resource(UpdateFortune, '/updatefortune')
 api.add_resource(DeleteFortune, '/deletefortune')
 
 if __name__ == '__main__':
-    application.run()
+    application.run(debug=True)
