@@ -78,7 +78,7 @@ class DeleteFortune(Resource):
 api.add_resource(ScanFortune, '/scanfortune/')      # CREATE a "/" ENTRY POINT AS WELL
 api.add_resource(ReadFortune, '/readfortune/')
 api.add_resource(AddFortune, '/addfortune/')
-api.add_resource(UpdateFortune, '/readfortune/')
+api.add_resource(UpdateFortune, '/updatefortune/')
 api.add_resource(DeleteFortune, '/deletefortune/')
 
 if __name__ == '__main__':

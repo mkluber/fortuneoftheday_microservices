@@ -32,7 +32,7 @@ function ReadFortune() {
   const FortuneInfo = document.querySelector("#ReadFortuneForm");
   const formData = new FormData(FortuneInfo);
   const response = fetch("https://api.outworldindustries.com/readfortune/", {
-    method: "POST",
+    method: "GET",
     body: formData,
   });
   console.log(response);
