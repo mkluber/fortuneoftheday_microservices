@@ -37,3 +37,25 @@ function ReadFortune() {
   });
   console.log(response);
 }
+
+function UpdateFortune() {
+  // A <form> element
+  const FortuneInfo = document.querySelector("#UpdateFortuneForm");
+  const formData = new FormData(FortuneInfo);
+  const response = fetch("https://api.outworldindustries.com/updatefortune/", {
+    method: "POST",
+    body: formData,
+  });
+  console.log(response);
+}
+
+function DeleteFortune() {
+  // A <form> element
+  const FortuneInfo = document.querySelector("#DeleteFortuneForm");
+  const formData = new FormData(FortuneInfo);
+  const response = fetch("https://api.outworldindustries.com/deletefortune/", {
+    method: "POST",
+    body: formData,
+  });
+  console.log(response);
+}
