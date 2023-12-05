@@ -13,3 +13,15 @@ function ScanFortune() {
       document.getElementById("ScanFortuneOutput").innerHTML = JSON.stringify(json);
     });
 }
+
+
+function AddFortune() {
+  // A <form> element
+  const FortuneInfo = document.querySelector("AddFortuneForm");
+  const formData = new FormData(FortuneInfo);
+  const response = fetch("https://api.outworldindustries.com/addfortune/", {
+    method: "POST",
+    body: formData,
+  });
+  console.log(response.json());
+}
