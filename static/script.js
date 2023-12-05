@@ -17,7 +17,7 @@ function ScanFortune() {
 
 function AddFortune() {
   // A <form> element
-  const FortuneInfo = document.querySelector("AddFortuneForm");
+  const FortuneInfo = document.querySelector("#AddFortuneForm");
   const formData = new FormData(FortuneInfo);
   const response = fetch("https://api.outworldindustries.com/addfortune/", {
     method: "POST",
